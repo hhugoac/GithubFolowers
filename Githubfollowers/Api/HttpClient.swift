@@ -8,10 +8,13 @@ import Foundation
 
 final class HttpClient {
     static let shared = HttpClient()
-    
+    let decoder = JSONDecoder()
     //private let cache =
     
-    private init() {}
+    private init() {
+        decoder.keyDecodingStrategy  = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .iso8601
+    }
     
     enum HttpClientError : Error {
         case failedToCreateRequest
@@ -30,13 +33,15 @@ final class HttpClient {
         
         let task = URLSession.shared.dataTask(with: urlRequest) {
             [weak self] data, _, error in
+            guard let self else { return }
             guard let data = data, error == nil else {
                 completion(.failure(HttpClientError.failedToGetData))
                 return
             }
             
             do{
-                let result = try JSONDecoder().decode(type.self, from: data)
+                print("🚩🚩🚩 \(String(describing: type))")
+                let result = try self.decoder.decode(type.self, from: data)
                 completion(.success(result))
             } catch {
                 completion(.failure(error))

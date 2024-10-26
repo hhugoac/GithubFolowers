@@ -34,7 +34,7 @@ final class GFRequest {
             string += "?"
             let argumentString = queryParameter.compactMap( {
                 guard let value = $0.value else { return nil }
-                return "\($0.name)=\(value)"
+                return "\($0.name) = \(value)"
             }).joined(separator: "&")
         }
         return string

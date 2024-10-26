@@ -30,8 +30,8 @@ class SearchViewController: UIViewController, SearchViewDelegate {
     
     func search(username: String) {
         let vc = FollowersViewController()
-        vc.user = username
         vc.title = "Followers of \(username)"
+        vc.username = username
         navigationController?.pushViewController(vc, animated: true)
     }
     
