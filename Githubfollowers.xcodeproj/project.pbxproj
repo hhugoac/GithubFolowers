@@ -24,6 +24,7 @@
 		BF8E12D32CCD9C7E00A4CE8F /* FollowersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E12D22CCD9C7E00A4CE8F /* FollowersViewModel.swift */; };
 		BF8E12D62CCDA0F800A4CE8F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E12D52CCDA0F800A4CE8F /* User.swift */; };
 		BF8E12D82CCDA1F400A4CE8F /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8E12D72CCDA1F400A4CE8F /* Follower.swift */; };
+		BFE9932B2CD1E697006A54EE /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE9932A2CD1E697006A54EE /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		BF8E12D22CCD9C7E00A4CE8F /* FollowersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewModel.swift; sourceTree = "<group>"; };
 		BF8E12D52CCDA0F800A4CE8F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BF8E12D72CCDA1F400A4CE8F /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		BFE9932A2CD1E697006A54EE /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 			children = (
 				914AD1A92CCC4585002E4849 /* SearchView.swift */,
 				BF09B8832CCED16F000D474D /* FollowersListView.swift */,
+				BFE9932A2CD1E697006A54EE /* CollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				BF8E12D32CCD9C7E00A4CE8F /* FollowersViewModel.swift in Sources */,
 				914AD1AA2CCC4585002E4849 /* SearchView.swift in Sources */,
 				911386822CCD5D9800E3FB9D /* GFEndpoint.swift in Sources */,
+				BFE9932B2CD1E697006A54EE /* CollectionViewCell.swift in Sources */,
 				9113867E2CCCB03F00E3FB9D /* HttpClient.swift in Sources */,
 				9113867B2CCC9BD700E3FB9D /* FollowersViewController.swift in Sources */,
 				914AD19A2CCC3CE1002E4849 /* SceneDelegate.swift in Sources */,

@@ -10,11 +10,11 @@ import UIKit
 protocol FollowersViewModelProtocol: AnyObject {
     func didSelectFollower(_ follower: Follower)
     func didLoadMoreFollowers()
-    
+    func didLoadInitialFollowers()
 }
 
 /// ViewModel to load follower of a user
-final class FollowersViewModel {
+final class FollowersViewModel: NSObject {
     
     private var searchText = ""
     public weak var delegate: FollowersViewModelProtocol?
@@ -39,6 +39,7 @@ final class FollowersViewModel {
                 print(String(describing: followers))
                 DispatchQueue.main.async {
                     self?.followers = followers
+                    self?.delegate?.didLoadInitialFollowers()
                 }
             case .failure(let error):
                 print(String(describing: error))
@@ -59,11 +60,10 @@ extension FollowersViewModel: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: "cell", for: indexPath
-        ) as? UICollectionViewCell else {
+            withReuseIdentifier: CollectionViewCell.identifier, for: indexPath
+        ) as? CollectionViewCell else {
             fatalError("Unsupported cell type")
         }
-        cell.backgroundColor = .red
         return cell
     }
 }

@@ -26,9 +26,9 @@ class FollowersListView: UIView {
         layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
+        collectionView.backgroundColor = .blue
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.identifier)
         return collectionView
     }()
     
@@ -57,8 +57,9 @@ class FollowersListView: UIView {
     }
     
     private func loadInitialValues() {
-        delegate?.setInitialValues(username: <#T##String#>)
-        viewModel.set(query: "")
+     
+        viewModel.set(query: "hhugoac")
+        viewModel.executeSearch()
     }
     
     private func setUpCollectionView() {
@@ -68,6 +69,10 @@ class FollowersListView: UIView {
 }
 
 extension FollowersListView: FollowersViewModelProtocol {
+    func didLoadInitialFollowers() {
+        collectionView.reloadData()
+    }
+    
     func didSelectFollower(_ follower: Follower) {
         // 📝 TODO:  conect here to de next view
         print(String(describing: follower))
